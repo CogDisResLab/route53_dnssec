@@ -1,6 +1,8 @@
 # AWS Route53 Zone with DNSSEC Set up
 
 This is a simple module that allows you to generate an AWS Route53 Zone with DNSSEC enabled. It needs an existing KMS key to work.
+
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
 | Name | Version |
@@ -41,3 +43,4 @@ No modules.
 |------|-------------|
 | <a name="output_hosted_zone_id"></a> [hosted\_zone\_id](#output\_hosted\_zone\_id) | n/a |
 | <a name="output_zone"></a> [zone](#output\_zone) | n/a |
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
