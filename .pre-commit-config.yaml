@@ -13,6 +13,9 @@ repos:
           args:
             - "--allow-missing-credentials"
         - id: pretty-format-json
+          args:
+            - "--autofix"
+            - "--indent=4"
 
     - repo: https://github.com/antonbabenko/pre-commit-terraform
       rev: v1.64.0
