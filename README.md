@@ -41,6 +41,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_hosted_zone_id"></a> [hosted\_zone\_id](#output\_hosted\_zone\_id) | n/a |
-| <a name="output_zone"></a> [zone](#output\_zone) | n/a |
+| <a name="output_hosted_zone_id"></a> [hosted\_zone\_id](#output\_hosted\_zone\_id) | ID of the hosted zone |
+| <a name="output_zone"></a> [zone](#output\_zone) | Name of the hosted zone |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
