@@ -33,9 +33,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_description"></a> [description](#input\_description) | Description of the hosted zone | `string` | `"Example hosted zone"` | no |
-| <a name="input_hosted_zone_name"></a> [hosted\_zone\_name](#input\_hosted\_zone\_name) | Name of the hosted zone | `string` | `"example.com"` | no |
-| <a name="input_kms_management_key_id"></a> [kms\_management\_key\_id](#input\_kms\_management\_key\_id) | ARN of the key signing key to use | `string` | `"arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"` | no |
+| <a name="input_description"></a> [description](#input\_description) | Description of the hosted zone | `string` | `"Hosted zone managed by terraform"` | no |
+| <a name="input_hosted_zone_name"></a> [hosted\_zone\_name](#input\_hosted\_zone\_name) | Name of the hosted zone | `string` | n/a | yes |
+| <a name="input_kms_management_key_id"></a> [kms\_management\_key\_id](#input\_kms\_management\_key\_id) | ARN of the key signing key to use | `string` | n/a | yes |
 
 ## Outputs
 

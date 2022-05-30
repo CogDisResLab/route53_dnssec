@@ -1,19 +1,20 @@
 variable "hosted_zone_name" {
   description = "Name of the hosted zone"
-  default     = "example.com"
   type        = string
+  nullable    = false
 }
 
 variable "description" {
   description = "Description of the hosted zone"
-  default     = "Example hosted zone"
+  default     = "Hosted zone managed by terraform"
   type        = string
+  nullable    = false
 }
 
 variable "kms_management_key_id" {
   description = "ARN of the key signing key to use"
-  default     = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
   type        = string
+  nullable    = false
 
   validation {
     condition     = can(regex("^arn:aws:kms:.*", var.kms_management_key_id))
