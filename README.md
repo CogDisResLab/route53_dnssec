@@ -1,8 +1,22 @@
-# AWS Route53 Zone with DNSSEC Set up
+<!-- BEGIN_TF_DOCS -->
+# Create AWS Route53 Zones with DNSSEC
 
-This is a simple module that allows you to generate an AWS Route53 Zone with DNSSEC enabled. It needs an existing KMS key to work.
+This module allows you to quickly and efficiently create AWS Route53 zones with DNSSEC.
+This requires the presence of an existing Domain Signing Key (DSK) in your AWS account.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Examples
+
+```hcl
+module "example" {
+  source  = "CogDisResLab/route53-dnssec/aws"
+  version = "1.2.0"
+
+  hosted_zone_name      = "example.com"
+  description           = "Example hosted zone"
+  kms_management_key_id = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
+}
+```
+
 ## Requirements
 
 | Name | Version |
@@ -14,20 +28,7 @@ This is a simple module that allows you to generate an AWS Route53 Zone with DNS
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.16.0 |
-
-## Modules
-
-No modules.
-
-## Resources
-
-| Name | Type |
-|------|------|
-| [aws_route53_hosted_zone_dnssec.dnssec](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_hosted_zone_dnssec) | resource |
-| [aws_route53_key_signing_key.key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_key_signing_key) | resource |
-| [aws_route53_zone.zone](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_zone) | resource |
-| [aws_route53domains_registered_domain.registered_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53domains_registered_domain) | resource |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.0, < 5.0 |
 
 ## Inputs
 
@@ -43,4 +44,17 @@ No modules.
 |------|-------------|
 | <a name="output_hosted_zone_id"></a> [hosted\_zone\_id](#output\_hosted\_zone\_id) | ID of the hosted zone |
 | <a name="output_zone"></a> [zone](#output\_zone) | Name of the hosted zone |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_route53_hosted_zone_dnssec.dnssec](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_hosted_zone_dnssec) | resource |
+| [aws_route53_key_signing_key.key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_key_signing_key) | resource |
+| [aws_route53_zone.zone](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_zone) | resource |
+| [aws_route53domains_registered_domain.registered_domain](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53domains_registered_domain) | resource |
+
+## License
+
+This project is licensed under the GNU General Public License version 3 (GPLv3).
+<!-- END_TF_DOCS -->
